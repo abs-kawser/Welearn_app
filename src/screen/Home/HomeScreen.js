@@ -71,8 +71,18 @@ const HomeScreen = () => {
         </TouchableOpacity>
       </View>
       {/* three curds  part end*/}
-
-
+  
+      {/* Continune part start*/}
+            
+        <View style={styles.continueMainContainer}>
+               
+          <View style={styles.continueText}>
+            <Text >Continue  Watching</Text>
+            <Text >See All</Text>
+          </View>
+            
+  
+        </View>
     </View>
 
   );
@@ -113,10 +123,10 @@ const styles = StyleSheet.create({
 
   // curd part start
   curdMain: {
+    flex: 0.2,
     height: 100,
     width: "95%",
     backgroundColor: "#ade8f4",
-    flex: 0.2,
     marginTop: 80,
     alignSelf: "center",
     borderRadius: 5,
@@ -150,8 +160,33 @@ const styles = StyleSheet.create({
     marginBottom:15,
     padding:10,
     // fontWeight:400
-  }
+  },
    // curd part end 
+
+   continueMainContainer:{
+    flex:0.3,
+    backgroundColor:"#4ecdc4",
+    marginTop:10,
+    borderRadius:10,
+    width:"95%",
+    alignSelf:"center"
+
+   },
+   continueText:{
+    flexDirection:"row",
+    padding:10,
+    justifyContent:"space-around"
+   }
+
+
+
+
+
+
+
+
+
+
 })
 
 
@@ -160,6 +195,39 @@ const styles = StyleSheet.create({
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//git config --global user.email "abskawser77000@gmail.com"
+//  git config --global user.name " abs-kawser"
 
     {/* <View style={styles.curds}>
           <View style={styles.IconText}>
