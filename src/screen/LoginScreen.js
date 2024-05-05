@@ -5,74 +5,72 @@ import Icon from "react-native-vector-icons/FontAwesome";
 const LoginScreen = () => {
 
     const [showPassword, setShowPassword] = useState(false);
-
-
-
+    
 
     return (
 
-<ScrollView style={styles.MainContainter}>
-    <View style={{ marginVertical:100}}>
-        <View style={styles.TextPart}>
-            <Text style={{ fontWeight: "bold", fontFamily: 'Roboto-bold', fontSize: 25, color: "black", }}> Welcome to {''}
-                <Text>
-                    <Text style={styles.We}>We</Text>
-                    <Text style={styles.Learn}>Learn</Text>
-                </Text>
-            </Text>
-            <Text style={{ marginTop: 35, color: "black", fontSize: 15 }} >Login to access your account</Text>
-        </View>
+     <ScrollView style={styles.MainContainter}>
+            <View style={{ marginVertical: 100 }}>
+                <View style={styles.TextPart}>
+                    <Text style={{ fontWeight: "bold", fontFamily: 'Roboto-bold', fontSize: 25, color: "black", }}> Welcome to {''}
+                        <Text>
+                            <Text style={styles.We}>We</Text>
+                            <Text style={styles.Learn}>Learn</Text>
+                        </Text>
+                    </Text>
+                    <Text style={{ marginTop: 35, color: "black", fontSize: 15 }} >Login to access your account</Text>
+                </View>
 
-        {/*  */}
+                {/*  */}
 
-        <View style={styles.LoginField}>
-            <TextInput
-                style={styles.input}
-                placeholder="User name"
+                <View style={styles.LoginField}>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="User name"
 
-            />
-
-            <View style={styles.passwordContainer}>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Password"
-                    keyboardType="numeric"
-                    secureTextEntry={!showPassword}
-
-                />
-                <TouchableOpacity
-                    style={styles.iconContainer}
-                    onPress={() => setShowPassword(!showPassword)}
-                >
-                    <Icon
-                        name={showPassword ? "eye" : "eye-slash"}
-                        size={20}
-                        color="#495867"
                     />
-                </TouchableOpacity>
+
+                    <View style={styles.passwordContainer}>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Password"
+                            keyboardType="numeric"
+                            secureTextEntry={!showPassword}
+
+                        />
+                        <TouchableOpacity
+                            style={styles.iconContainer}
+                            onPress={() => setShowPassword(!showPassword)}
+                        >
+                            <Icon
+                                name={showPassword ? "eye" : "eye-slash"}
+                                size={20}
+                                color="#495867"
+                            />
+                        </TouchableOpacity>
+                    </View>
+
+
+
+                    <Text style={{ alignSelf: "flex-end", marginRight: 15 }}>Forget password</Text>
+                    <TouchableOpacity
+                        style={styles.loginInput}
+                    >
+                        <Text style={{ color: "white", fontSize: 15 }}>Login</Text>
+                    </TouchableOpacity>
+                </View>
+
+
+                <View style={styles.TermCondition}>
+                    <Text style={{ fontSize: 16 }}>By signing in with an account, you agree to </Text>
+                    <Text style={{ marginLeft: 10, marginTop: 10 }}>WeLearn’s Terms of Service and Privacy Policy.</Text>
+                </View>
             </View>
-
-
-
-            <Text style={{ alignSelf: "flex-end", marginRight: 15 }}>Forget password</Text>
-            <TouchableOpacity
-                style={styles.loginInput}
-            >
-                <Text style={{ color: "white", fontSize: 15 }}>Login</Text>
-            </TouchableOpacity>
-        </View>
-
-
-        <View style={styles.TermCondition}>
-            <Text style={{ fontSize: 16 }}>By signing in with an account, you agree to </Text>
-            <Text style={{ marginLeft: 10, marginTop: 10 }}>WeLearn’s Terms of Service and Privacy Policy.</Text>
-        </View>
-    </View>
-</ScrollView>
-    )
+        </ScrollView>
+    );
 }
 
-export default LoginScreen
+export default LoginScreen;
 
 const styles = StyleSheet.create({
 

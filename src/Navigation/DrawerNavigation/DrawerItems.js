@@ -1,23 +1,29 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import { DrawerContentScrollView, DrawerItem, } from '@react-navigation/drawer';
 import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 const DrawerItems = props => {
 
     const navigation = useNavigation();
 
     return (
-
-
-<View style={{ flex: 1, backgroundColor: '#2358E13D' }}>
+<View style={{ flex: 1, backgroundColor: '#E0FCFF' }}>
+    
     <DrawerContentScrollView {...props}>
         <View style={styles.drawerContent}>
             {/* drawer image */}
+
             <View style={styles.userInfoSection}>
                 <View style={{ flexDirection: 'column' }}>
                     <View style={styles.imageContainer}>
                         <View style={styles.profileImg}>
+                            <Image
+                                source={require('../../asset/user_1.png')}
+                                style={{ width: 70, height: 70, }}
+                            />
                             {/* <Profile width={70} height={70} /> */}
                         </View>
                     </View>
@@ -27,8 +33,8 @@ const DrawerItems = props => {
                             flexDirection: 'column',
                             justifyContent: 'center',
                         }}>
-                        <View style={[styles.caption, { flexWrap: 'wrap',alignSelf:"center" }]}>
-                            <Text >Abs kawser</Text>
+                        <View style={[styles.caption, { flexWrap: 'wrap', alignSelf: "center" }]}>
+                            <Text style={{ color: "black", fontSize: 18, fontWeight: 500 }}>Abs kawser</Text>
                         </View>
                     </View>
                 </View>
@@ -45,18 +51,95 @@ const DrawerItems = props => {
                     onPress={() => {
                         props.navigation.navigate('HomeScreen');
                     }}
+                    // icon={({ color, size }) => <Icon name="home" size={24} color={"black"} />}
+
+                    icon={() => (
+                        <Image
+                            source={require('../../asset/home.png')}
+                            style={{ width: 26, height: 24, }}
+                        />
+                    )}
+                    
+                />
+
+
+
+
+                <DrawerItem
+                    label="Course"
+                    labelStyle={{ color: '#343a40', fontSize: 15 }}
+                    onPress={() => {
+                        props.navigation.navigate('Course')
+                    }}
+
+                    //   icon={({ color, size }) => <Icon name="book" size={24} color={"black"} />}
+
+                    icon={() => (
+                        <Image
+                            source={require('../../asset/homework.png')}
+                            style={{ width: 26, height: 24, }}
+                        />
+                    )}
+                />
+
+
+                <DrawerItem
+                    label="Quiz"
+                    labelStyle={{ color: '#343a40', fontSize: 15 }}
+                    onPress={() => {
+                        props.navigation.navigate('Quiz')
+                    }}
+
+                    icon={() => (
+                        <Image
+                            source={require('../../asset/quiz.png')}
+                            style={{ width: 30, height: 24, }}
+                        />
+                    )}
+
+                />
+
+
+
+                <DrawerItem
+                    label="Profile"
+                    labelStyle={{ color: '#343a40', fontSize: 15 }}
+                    onPress={() => {
+                        props.navigation.navigate('Profile')
+                    }}
+
+                    icon={() => (
+                        <Image
+                            source={require('../../asset/profile.png')}
+                            style={{ width: 28, height: 24, }}
+                        />
+                    )}
+
                 />
 
                 <DrawerItem
-                    label="Product" 
+                    label="Settings"
                     labelStyle={{ color: '#343a40', fontSize: 15 }}
                     onPress={() => {
-                        props.navigation.navigate('Product');
+                        props.navigation.navigate('Settings')
                     }}
+
+                    icon={() => (
+                        <Image
+                            source={require('../../asset/setting.png')}
+                            style={{ width: 28, height: 24, }}
+                        />
+                    )}
+
                 />
-                  
-                  <DrawerItem
-                    label="Login" 
+
+            
+
+
+
+
+                <DrawerItem
+                    label="Login"
                     labelStyle={{ color: '#343a40', fontSize: 15 }}
                     onPress={() => {
                         props.navigation.navigate('Login');
@@ -69,10 +152,10 @@ const DrawerItems = props => {
 </View>
 
 
-    )
+    );
 }
 
-export default DrawerItems
+export default DrawerItems;
 
 const styles = StyleSheet.create({
 
@@ -81,7 +164,7 @@ const styles = StyleSheet.create({
     },
     userInfoSection: {
         marginTop: -4,
-        backgroundColor:"red"
+        backgroundColor: "#E0FCFF"
     },
     imageContainer: {
         alignSelf: 'center',
@@ -106,7 +189,7 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
         // display: 'flex',
 
-        borderWidth: 2,
+        // borderWidth: 2,
         borderColor: '#6096ba',
         borderRadius: 10,
         overflow: 'hidden',
@@ -120,3 +203,30 @@ const styles = StyleSheet.create({
 
 
 })
+
+
+
+
+
+
+
+
+
+// options={{
+//     drawerIcon: ({ focused, size }) => (
+//       <Image
+//         style={{ height: 30, width: 30, resizeMode: "contain" }}
+//         source={require("../../../src/asset/homework.png")}
+//       />
+//     ),
+//   }}
+
+
+
+{/* <DrawerItem
+label="Product"
+labelStyle={{ color: '#343a40', fontSize: 15 }}
+onPress={() => {
+    props.navigation.navigate('Product');
+}}
+/> */}
