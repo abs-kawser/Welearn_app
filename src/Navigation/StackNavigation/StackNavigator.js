@@ -1,18 +1,22 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import DrawerNavigator from '../DrawerNavigation/DrawerNavigator';
 import ProductScreen from '../../screen/ProductScreen';
 import LoginScreen from '../../screen/LoginScreen';
-import Course from '../../screen/course/Course';
+import Course from '../../screen/course/CourseScreen';
 import Quiz from '../../screen/quiz/Quiz';
 import Profile from '../../screen/profile/Profile';
 import Settings from '../../screen/settings/Settings';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import { useNavigation } from '@react-navigation/native';
+import DrawerNavigator from '../DrawerNavigation/DrawerNavigator';
+import CourseScreen from '../../screen/course/CourseScreen';
 
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
+    const navigation = useNavigation();
 
     return (
 
@@ -26,30 +30,39 @@ const StackNavigator = () => {
 
             <Stack.Screen
                 name="Course"
-                component={Course}
-                options={{ headerShown: false }}
+                component={CourseScreen}
+                options={{ headerShown:false}}
+                // options={({ navigation }) => ({
+                //     headerLeft: () => (
+                //         <TouchableOpacity  >
+                //             <Icon name="bars" size={20} style={styles.icon} />
+                //         </TouchableOpacity>
+                //     ),
+                //     headerTitle: "Course",
+                //     headerShown: true,
+                // })}
             />
 
             <Stack.Screen
-            name="Quiz"
-            component={Quiz}
-            options={{ headerShown: false }}
+                name="Quiz"
+                component={Quiz}
+                options={{ headerShown: false }}
 
             />
 
-              <Stack.Screen
+            <Stack.Screen
                 name="Profile"
                 component={Profile}
                 options={{ headerShown: false }}
-              />
+            />
 
-             
-               <Stack.Screen
+
+            <Stack.Screen
                 name="Settings"
                 component={Settings}
                 options={{ headerShown: false }}
-              />
- 
+            />
+
 
 
             <Stack.Screen

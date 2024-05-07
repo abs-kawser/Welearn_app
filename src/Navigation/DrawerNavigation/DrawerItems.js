@@ -11,7 +11,6 @@ const DrawerItems = props => {
 
     return (
 <View style={{ flex: 1, backgroundColor: '#E0FCFF' }}>
-    
     <DrawerContentScrollView {...props}>
         <View style={styles.drawerContent}>
             {/* drawer image */}
@@ -59,7 +58,7 @@ const DrawerItems = props => {
                             style={{ width: 26, height: 24, }}
                         />
                     )}
-                    
+
                 />
 
 
@@ -133,7 +132,7 @@ const DrawerItems = props => {
 
                 />
 
-            
+
 
 
 
