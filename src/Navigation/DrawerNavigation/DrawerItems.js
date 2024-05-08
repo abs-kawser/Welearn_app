@@ -43,7 +43,6 @@ const DrawerItems = props => {
 
             {/* =====drawer content part  ==== */}
             <View style={styles.drawerSection}>
-
                 <DrawerItem
                     label="Home"
                     labelStyle={{ color: '#343a40', fontSize: 15 }}
@@ -60,10 +59,6 @@ const DrawerItems = props => {
                     )}
 
                 />
-
-
-
-
                 <DrawerItem
                     label="Course"
                     labelStyle={{ color: '#343a40', fontSize: 15 }}
@@ -81,7 +76,6 @@ const DrawerItems = props => {
                     )}
                 />
 
-
                 <DrawerItem
                     label="Quiz"
                     labelStyle={{ color: '#343a40', fontSize: 15 }}
@@ -97,9 +91,6 @@ const DrawerItems = props => {
                     )}
 
                 />
-
-
-
                 <DrawerItem
                     label="Profile"
                     labelStyle={{ color: '#343a40', fontSize: 15 }}
@@ -132,25 +123,37 @@ const DrawerItems = props => {
 
                 />
 
+             
 
+                 <DrawerItem
+                    label="Password"
+                    labelStyle={{ color: '#343a40', fontSize: 15 }}
+                    onPress={() => {
+                        props.navigation.navigate('Settings')
+                    }}
 
+                    icon={() => (
+                        <Image
+                            source={require('../../asset/password.png')}
+                            style={{ width: 26, height: 26, }}
+                        />
+                    )}
 
+                 />
 
-
-                <DrawerItem
+                   {/* <DrawerItem
                     label="Login"
                     labelStyle={{ color: '#343a40', fontSize: 15 }}
                     onPress={() => {
                         props.navigation.navigate('Login');
                     }}
-                />
+                /> */}
+
 
             </View>
         </View>
     </DrawerContentScrollView>
 </View>
-
-
     );
 }
 

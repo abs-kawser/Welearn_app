@@ -11,11 +11,14 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useNavigation } from '@react-navigation/native';
 import DrawerNavigator from '../DrawerNavigation/DrawerNavigator';
 import CourseScreen from '../../screen/course/CourseScreen';
+import AssignedCourse from '../../screen/course/AssignedCourse';
+import ChangePass from '../../screen/ChangePass';
 
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
+     
     const navigation = useNavigation();
 
     return (
@@ -31,16 +34,7 @@ const StackNavigator = () => {
             <Stack.Screen
                 name="Course"
                 component={CourseScreen}
-                options={{ headerShown:false}}
-                // options={({ navigation }) => ({
-                //     headerLeft: () => (
-                //         <TouchableOpacity  >
-                //             <Icon name="bars" size={20} style={styles.icon} />
-                //         </TouchableOpacity>
-                //     ),
-                //     headerTitle: "Course",
-                //     headerShown: true,
-                // })}
+                options={{ headerShown: false }}
             />
 
             <Stack.Screen
@@ -75,6 +69,20 @@ const StackNavigator = () => {
                 name="Login"
                 component={LoginScreen}
                 options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+                name="Assigned"
+                component={AssignedCourse}
+                options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+
+              name="Password"
+              component={ChangePass}
+              options={{ headerShown: false }}
+
             />
 
         </Stack.Navigator>
