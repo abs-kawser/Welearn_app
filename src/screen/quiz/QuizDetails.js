@@ -194,7 +194,7 @@ const QuizDetails = () => {
                 ...prevState,
                 [questionIndex]: newValue
             };
-            console.log("Selected Options:",JSON.stringify(updatedOptions, null, 2));
+            console.log("Selected Options:", JSON.stringify(updatedOptions, null, 2));
             return updatedOptions;
         });
     };
@@ -202,10 +202,10 @@ const QuizDetails = () => {
     const renderQuestion = (question, index) => {
 
         return (
-                 
+
             <View key={index} style={styles.quizView}>
                 <View style={styles.quizText}>
-                    <View style={{marginVertical:10}}>
+                    <View style={{ marginVertical: 10 }}>
                         <Text style={{ textAlign: "center", fontSize: 17, fontWeight: "bold", color: "#0a0908" }}>
                             {index + 1}: {question.questionText}
                         </Text>
@@ -219,7 +219,7 @@ const QuizDetails = () => {
                                 <View key={optionIndex} style={{ flexDirection: 'row', alignItems: 'center' }}>
                                     <RadioButton.Android
                                         value={option.value}
-                                        color="#000" // Black color for selected option
+                                        color="#006400" // Black color for selected option
                                     />
                                     <Text>{option.label}</Text>
                                 </View>
@@ -233,6 +233,7 @@ const QuizDetails = () => {
 
     // Example data - this can be replaced with dynamically fetched data
     const questions = [
+        
         {
             questionText: "What does HTML stand for?",
             options: [
@@ -276,16 +277,22 @@ const QuizDetails = () => {
     ];
 
     return (
+        <>
+    
+        <>
+            <CustomHeader title={"Your quiz"} />
+        </>
+
         <ScrollView style={{ flex: 1, backgroundColor: "#E1F4FF" }}>
-                  <> 
-                  <CustomHeader title={"Your quiz"}/>
-                  </>
             {questions.map((question, index) => renderQuestion(question, index))}
         </ScrollView>
+
+        </>
     );
 };
 
 export default QuizDetails;
+
 
 
 const styles = StyleSheet.create({
