@@ -1,7 +1,7 @@
 
-const blackColor = "#000000";
+   const blackColor = "#000000";
 
-const boldRobotoFont = {
+   const boldRobotoFont = {
     fontWeight: "bold",
     fontFamily: 'Roboto-bold',
   }; 

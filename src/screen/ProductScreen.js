@@ -12,6 +12,8 @@ const ProductScreen = () => {
 
 export default ProductScreen
 
+
+
 const styles = StyleSheet.create({
 
 })

@@ -9,13 +9,12 @@ import CustomHeader from './../../component/CustomHeader';
 
 
 const CourseScreen = ( ) => {
+
   const navigation = useNavigation();
 
   return (
 
-
     <View style={styles.mainContainer}>
-
       {/* Custom header start */}
       {/* <View style={styles.customHeader}>
         <View>
@@ -41,7 +40,7 @@ const CourseScreen = ( ) => {
       </View> */}
 
       <> 
-      <CustomHeader/>
+      <CustomHeader title="Courses"/>
       </>
        
       {/* buttons part start  */}
@@ -61,10 +60,8 @@ const CourseScreen = ( ) => {
         </TouchableOpacity>
       </View>
       {/* buttons part end*/}
-
-
-      {/* All course list*/}
-      <ScrollView >
+      {/*All course list*/}
+       <ScrollView >
 
         <View style={styles.courseListMainContainer}>
 
@@ -256,10 +253,12 @@ const CourseScreen = ( ) => {
 
       </ScrollView>
     </View>
-  )
+ 
+  );
+
 }
 
-export default CourseScreen;
+export default CourseScreen ;
 
 const styles = StyleSheet.create({
 
@@ -268,19 +267,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#EBFBFD"
   },
 
-
   customHeader: {
     flexDirection: "row",
     backgroundColor: "#00A9B8",
     borderRadius: 15,
 
   },
+
   centeredTextContainer: {
     flex: 0.8, // Make this view take up all remaining space
     justifyContent: 'center', // Center content horizontally
     alignItems: 'center', // Center content vertically within this view
   },
-  // 
+  //
   buttonMainContainer: {
     // backgroundColor: "red",
     marginTop: 5,
@@ -343,7 +342,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: "center",
     // backgroundColor:"black",
+  },
+ 
 
-  }
-
-})
+});

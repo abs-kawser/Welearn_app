@@ -37,7 +37,7 @@
 //     // <View>
 //     //   <Text>App yuuf uihdf uefh iuhfuidhf </Text>
 //     // </View>
-    
+
 //     <NavigationContainer>
 //       <Drawer.Navigator initialRouteName="Home">
 //         <Drawer.Screen name="Home" component={HomeScreen} />
@@ -55,15 +55,24 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import AppNav from './src/Navigation/StackNavigation/AppNav'
+import { PaperProvider } from 'react-native-paper';
 
 const App = () => {
+
   return (
-      <>
-        <AppNav/>
-      </>
-  )
+
+    <>
+       <PaperProvider>
+       <AppNav/>
+       </PaperProvider>
+      
+    </>
+
+  );
 }
 
 export default App
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+
+})

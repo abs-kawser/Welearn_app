@@ -13,6 +13,7 @@ import DrawerNavigator from '../DrawerNavigation/DrawerNavigator';
 import CourseScreen from '../../screen/course/CourseScreen';
 import AssignedCourse from '../../screen/course/AssignedCourse';
 import ChangePass from '../../screen/ChangePass';
+import QuizDetails from '../../screen/quiz/QuizDetails';
 
 
 const Stack = createNativeStackNavigator();
@@ -57,8 +58,6 @@ const StackNavigator = () => {
                 options={{ headerShown: false }}
             />
 
-
-
             <Stack.Screen
                 name="Product"
                 component={ProductScreen}
@@ -78,17 +77,23 @@ const StackNavigator = () => {
             />
 
             <Stack.Screen
-
               name="Password"
               component={ChangePass}
               options={{ headerShown: false }}
-
             />
 
+                <Stack.Screen
+                 name='QuizDetailsScreen'
+                 component={QuizDetails}
+                 options={{ headerShown: false }}
+                />
+            
         </Stack.Navigator>
 
+
+   
     );
-}
+};
 
 export default StackNavigator;
 

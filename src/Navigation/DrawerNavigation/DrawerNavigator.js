@@ -46,8 +46,5 @@ const DrawerNavigator = () => {
 }
 
 export default DrawerNavigator
-
 const styles = StyleSheet.create({
-
-
 })
