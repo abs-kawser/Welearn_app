@@ -19,18 +19,14 @@ import QuizDetails from '../../screen/quiz/QuizDetails';
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
-     
+
     const navigation = useNavigation();
 
     return (
 
         <Stack.Navigator>
 
-            <Stack.Screen
-                name="HomeScreen"
-                component={DrawerNavigator}
-                options={{ headerShown: false }}
-            />
+            <Stack.Screen name="HomeScreen" component={DrawerNavigator} options={{ headerShown: false }} />
 
             <Stack.Screen
                 name="Course"
@@ -77,21 +73,20 @@ const StackNavigator = () => {
             />
 
             <Stack.Screen
-              name="Password"
-              component={ChangePass}
-              options={{ headerShown: false }}
+                name="Password"
+                component={ChangePass}
+                options={{ headerShown: false }}
             />
 
-                <Stack.Screen
-                 name='QuizDetailsScreen'
-                 component={QuizDetails}
-                 options={{ headerShown: false }}
-                />
-            
+            <Stack.Screen
+                name='QuizDetailsScreen'
+                component={QuizDetails}
+                options={{ headerShown: false }}
+            />
+
         </Stack.Navigator>
 
-
-   
+        
     );
 };
 

@@ -6,12 +6,11 @@ import CustomHeader from '../../component/CustomHeader';
 const Quiz = () => {
   const navigation = useNavigation();
 
- 
 
   return (
 
-    <View style={styles.mainContainer}>
-      <CustomHeader title="Quiz"/>
+  <View style={styles.mainContainer}>
+    <CustomHeader title="Quiz" />
     <ScrollView>
       <View style={styles.courseListMainContainer}>
         <View style={styles.child1}>
@@ -53,9 +52,9 @@ const Quiz = () => {
               marginLeft: 19
 
             }}>
-            <Text 
-            onPress={() => navigation.navigate('QuizDetailsScreen')}
-            style={{ color: "#FFFFFF", fontWeight: "bold", textAlign: "center", fontFamily: 'Roboto-bold', }}>Start</Text>
+            <Text
+              onPress={() => navigation.navigate('QuizDetailsScreen')}
+              style={{ color: "#FFFFFF", fontWeight: "bold", textAlign: "center", fontFamily: 'Roboto-bold', }}>Start</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -108,11 +107,12 @@ const Quiz = () => {
       </View>
     </ScrollView>
   </View>
+
   );
 
 };
+export default Quiz;
 
-export default Quiz ; 
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -192,4 +192,4 @@ const styles = StyleSheet.create({
     // backgroundColor:"black",
     // flex: 0.3,
   },
-})
+});

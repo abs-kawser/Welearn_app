@@ -8,41 +8,42 @@ import CustomHeader from './../../component/CustomHeader';
 
 
 
-const CourseScreen = ( ) => {
+const CourseScreen = () => {
 
   const navigation = useNavigation();
 
   return (
 
     <View style={styles.mainContainer}>
+
       {/* Custom header start */}
       {/* <View style={styles.customHeader}>
-        <View>
-          <TouchableOpacity
-            style={{
-              paddingVertical: 25,
-              paddingHorizontal: 20,
-            }}>
-            <Icon name="bars" size={18} style={{ color: "white" }} />
-          </TouchableOpacity>
-        </View>
+    <View>
+      <TouchableOpacity
+        style={{
+          paddingVertical: 25,
+          paddingHorizontal: 20,
+        }}>
+        <Icon name="bars" size={18} style={{ color: "white" }} />
+      </TouchableOpacity>
+    </View>
 
 
-        <View style={styles.centeredTextContainer}>
-          <Text style={{
-            color: 'white',
-            fontWeight: "bold",
-            fontFamily: ' ',
-            fontSize: 18,
-          }}>My Courses</Text>
+    <View style={styles.centeredTextContainer}>
+      <Text style={{
+        color: 'white',
+        fontWeight: "bold",
+        fontFamily: ' ',
+        fontSize: 18,
+      }}>My Courses</Text>
 
-        </View>
-      </View> */}
+    </View>
+  </View> */}
 
-      <> 
-      <CustomHeader title="Courses"/>
+      <>
+        <CustomHeader title="Courses" />
       </>
-       
+
       {/* buttons part start  */}
       <View style={styles.buttonMainContainer}>
         <TouchableOpacity style={styles.buttonGroup}>
@@ -61,7 +62,7 @@ const CourseScreen = ( ) => {
       </View>
       {/* buttons part end*/}
       {/*All course list*/}
-       <ScrollView >
+      <ScrollView >
 
         <View style={styles.courseListMainContainer}>
 
@@ -250,15 +251,14 @@ const CourseScreen = ( ) => {
             </TouchableOpacity>
           </View>
         </View>
-
       </ScrollView>
     </View>
- 
+
   );
 
 }
 
-export default CourseScreen ;
+export default CourseScreen;
 
 const styles = StyleSheet.create({
 
@@ -319,7 +319,7 @@ const styles = StyleSheet.create({
     width: "95%",
     alignSelf: "center",
     marginTop: 10,
-    elevation:5
+    elevation: 5
   },
   child1: {
     // flex: 0.3,
@@ -343,6 +343,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     // backgroundColor:"black",
   },
- 
+
 
 });

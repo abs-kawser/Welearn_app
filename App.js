@@ -44,8 +44,6 @@
 //         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
 //       </Drawer.Navigator>
 //     </NavigationContainer>
-
-
 //   );
 // };
 

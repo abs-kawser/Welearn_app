@@ -100,8 +100,6 @@ const HomeScreen = () => {
           <Image source={require("../../asset/Image_4.png")} />
         </View>
       </View>
-
-
     </View>
 
   );
