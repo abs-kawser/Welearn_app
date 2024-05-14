@@ -202,31 +202,31 @@
 
 //         return (
 
-//             <View key={index} style={styles.quizView}>
-//                 <View style={styles.quizText}>
-//                     <View style={{ marginVertical: 10 }}>
-//                         <Text style={{ textAlign: "center", fontSize: 17, fontWeight: "bold", color: "#0a0908" }}>
-//                             {index + 1}: {question.questionText}
-//                         </Text>
+// <View key={index} style={styles.quizView}>
+//     <View style={styles.quizText}>
+//         <View style={{ marginVertical: 10 }}>
+//             <Text style={{ textAlign: "center", fontSize: 17, fontWeight: "bold", color: "#0a0908" }}>
+//                 {index + 1}: {question.questionText}
+//             </Text>
+//         </View>
+//         <View style={styles.ansOfQuiz}>
+//             <RadioButton.Group
+//                 onValueChange={newValue => handleOptionChange(index, newValue)}
+//                 value={selectedOptions[index]}
+//             >
+//                 {question.options.map((option, optionIndex) => (
+//                     <View key={optionIndex} style={{ flexDirection: 'row', alignItems: 'center' }}>
+//                         <RadioButton.Android
+//                             value={option.value}
+//                             color="#006400" // Black color for selected option
+//                         />
+//                         <Text>{option.label}</Text>
 //                     </View>
-//                     <View style={styles.ansOfQuiz}>
-//                         <RadioButton.Group
-//                             onValueChange={newValue => handleOptionChange(index, newValue)}
-//                             value={selectedOptions[index]}
-//                         >
-//                             {question.options.map((option, optionIndex) => (
-//                                 <View key={optionIndex} style={{ flexDirection: 'row', alignItems: 'center' }}>
-//                                     <RadioButton.Android
-//                                         value={option.value}
-//                                         color="#006400" // Black color for selected option
-//                                     />
-//                                     <Text>{option.label}</Text>
-//                                 </View>
-//                             ))}
-//                         </RadioButton.Group>
-//                     </View>
-//                 </View>
-//             </View>
+//                 ))}
+//             </RadioButton.Group>
+//         </View>
+//     </View>
+// </View>
 
 //         );
 
@@ -321,54 +321,132 @@
 // progress bar 
 
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, ScrollView,Button } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Button } from 'react-native';
 import CustomHeader from '../../component/CustomHeader';
+import { RadioButton } from 'react-native-paper';
+import { Checkbox } from 'react-native-paper';
 
 
 const QuizDetails = () => {
 
     const [selectedOptions, setSelectedOptions] = useState({});
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const questionsPerSet = 3;
 
-    const handleOptionChange = (questionIndex, newValue) => {
-        setSelectedOptions(prevState => ({
-            ...prevState,
-            [questionIndex]: newValue
-        }));
+
+
+    // const handleOptionChange = (questionIndex, newValue) => {
+
+    //     setSelectedOptions(prevState => {
+    //         const updatedOptions = {
+    //             ...prevState,
+    //             [questionIndex]: newValue
+    //         };
+    //         console.log("Selected Options:", JSON.stringify(updatedOptions, null, 2));
+    //         return updatedOptions;
+    //     });
+    // };
+
+
+    // const handleOptionChange = (questionIndex, newValue) => {
+    //     setSelectedOptions(prevState => {
+    //         const updatedOptions = {
+    //             ...prevState,
+    //             [questionIndex]: prevState[questionIndex] === newValue ? null : newValue
+    //         };
+    //         console.log("Selected Options:", JSON.stringify(updatedOptions, null, 2));
+    //         return updatedOptions;
+    //     });
+    // };
+
+    const handleOptionChange = (questionIndex, optionValue) => {
+        setSelectedOptions(prevState => {
+            const updatedOptions = {
+                ...prevState,
+                [questionIndex]: prevState[questionIndex] ? [...prevState[questionIndex]] : [],
+                // Copy previous selected options array or initialize if not exists
+            };
+
+            const index = updatedOptions[questionIndex].indexOf(optionValue);
+            
+             
+            if (index !== -1) { 
+                // If option already selected, remove it
+                updatedOptions[questionIndex].splice(index, 1);
+            } else {
+                // Otherwise, add the option to selected options
+                updatedOptions[questionIndex].push(optionValue);
+            }
+            console.log("Selected Options:", JSON.stringify(updatedOptions, null, 2));
+            return updatedOptions;
+        });
     };
+
+
 
     const handleNext = () => {
         // Move to the next question
-        setCurrentQuestionIndex(prevIndex => prevIndex + 2);
+        setCurrentQuestionIndex(prevIndex => prevIndex + questionsPerSet);
     };
 
     const handleBack = () => {
         // Move to the previous set of questions
-        setCurrentQuestionIndex(prevIndex => prevIndex - 2);
+        setCurrentQuestionIndex(prevIndex => prevIndex - questionsPerSet);
     };
 
     const renderQuestion = (question, index) => {
         return (
-            <View key={index} style={styles.quizView}>
-                <View style={styles.quizText}>
-                    <View style={{ marginVertical: 10 }}>
-                        <Text style={{ textAlign: "center", fontSize: 17, fontWeight: "bold", color: "#0a0908" }}>
-                            {index + 1}: {question.questionText}
-                        </Text>
-                    </View>
-                    <View style={styles.ansOfQuiz}>
-                        {question.options.map((option, optionIndex) => (
-                            <View key={optionIndex} style={{ flexDirection: 'row', alignItems: 'center', flex: 0.1 }}>
-                                <Button
-                                    title={option.label}
-                                    onPress={() => handleOptionChange(index, option.value)}
-                                    color={selectedOptions[index] === option.value ? "#006400" : "#4d194d"}
-                                />
-                            </View>
-                        ))}
-                    </View>
-                </View>
+<>
+    <View key={index} style={styles.quizView}>
+
+        <View style={styles.quizText}>
+
+            <View style={{}}>
+                <Text style={{ textAlign: "center", fontSize: 17, fontWeight: "bold", color: "#0a0908", }}>
+                    {index + 1}: {question.questionText}
+                </Text>
             </View>
+
+            {/* <View style={styles.ansOfQuiz}>
+<RadioButton.Group
+onValueChange={newValue => handleOptionChange(index, newValue)}
+value={selectedOptions[index]}
+>
+{question.options.map((option, optionIndex) => (
+<View key={optionIndex} style={{ flexDirection: 'row', alignItems: 'center' }}>
+    <RadioButton.Android
+        value={option.value}
+        // onPress={() => handleOptionChange(index, option.value)}
+        // color={selectedOptions[index] === option.value ? "#006400" : "#4d194d"}
+        color="#006400"
+    />
+    <Text style={{ color: "#03071e", fontSize: 15 }}>{option.label}</Text>
+</View>
+))}
+</RadioButton.Group>
+</View> */}
+
+    <View style={styles.ansOfQuiz}>
+        <RadioButton.Group
+            onValueChange={newValue => handleOptionChange(index, newValue)}
+            value={selectedOptions[index]}
+        >
+            {question.options.map((option, optionIndex) => (
+                <View key={optionIndex} style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Checkbox.Android
+                        status={selectedOptions[index] && selectedOptions[index].includes(option.value) ? 'checked' : 'unchecked'}
+                        onPress={() => handleOptionChange(index, option.value)}
+                        color="#006400"
+                    />
+                    <Text style={{ color: "#03071e", fontSize: 15 }}>{option.label}</Text>
+                </View>
+            ))}
+        </RadioButton.Group>
+    </View>
+        </View>
+    </View>
+</>
+
         );
     };
 
@@ -433,49 +511,61 @@ const QuizDetails = () => {
         // Add more questions here
     ];
 
-    // Calculate progress
+    // Calculate progress 
     const progress = (currentQuestionIndex + 1) / questions.length;
 
-    return (
-        <>
-        
-            <ScrollView style={{ flex: 1, backgroundColor: "#E1F4FF" }}>
-                <CustomHeader title={"Your Quiz"} />
-                <View style={styles.progressBar}>
-                    <View style={{ backgroundColor: '#ccc', height: 10, borderRadius: 5, width: '100%' }}>
-                        <View style={{ backgroundColor: '#006400', height: 10, borderRadius: 5, width: `${progress * 100}%` }} />
-                    </View>
-                </View>
-                {questions.slice(currentQuestionIndex, currentQuestionIndex + 2).map((question, index) =>
-                    renderQuestion (question, currentQuestionIndex + index)
-                )}
-                <View style={styles.navigationButtons}>
-                    {currentQuestionIndex > 0 && (
-                        <Button title="Backk" onPress={handleBack} />
-                    )}
-                    {currentQuestionIndex < questions.length - 2 && (
-                        <Button title=" Next" onPress={handleNext} />
-                    )}
-                </View>
-            </ScrollView>
 
-        </>
+    return (
+
+<>
+    <ScrollView style={{ flex: 1, backgroundColor: "#E1F4FF" }}>
+        <CustomHeader title={"Your Quiz"} />
+
+        <View style={styles.progressBar}>
+            <View style={{ backgroundColor: '#ccc', height: 15, borderRadius: 5, width: '100%' }}>
+                <View style={{ backgroundColor: '#006400', height: 15, borderRadius: 5, width: `${progress * 100}%` }} />
+            </View>
+        </View>
+
+        {questions.slice(currentQuestionIndex, currentQuestionIndex + questionsPerSet).map((question, index) =>
+            renderQuestion(question, currentQuestionIndex + index)
+        )}
+
+        <View style={styles.navigationButtons}>
+
+            {currentQuestionIndex > 0 && (
+                <Button title=" Back" onPress={handleBack} />
+            )}
+
+            {currentQuestionIndex < questions.length - 2  && (
+                <Button title=" Next" onPress={handleNext} />
+            )}
+
+        </View>
+    </ScrollView>
+</>
+
     );
 };
 
+
+
 const styles = StyleSheet.create({
+
     quizView: {
-        margin: 15,
-        padding: 15,
+        margin: 20,
+        padding: 20,
         flex: 0.3,
         backgroundColor: "#e6ccb2",
         borderRadius: 15
     },
     quizText: {
-        flexDirection: "column",
+        // flexDirection: "column",
     },
     ansOfQuiz: {
-        alignSelf: "center"
+        alignSelf: "center",
+        padding: 10,
+        // backgroundColor:"green",
     },
     progressBar: {
         marginHorizontal: 20,
@@ -488,11 +578,59 @@ const styles = StyleSheet.create({
     navigationButtons: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        marginTop: 20
-    }
+        // marginTop: 20
+    },
+
 });
 
 export default QuizDetails;
+
+
+
+
+
+{/* <View key={index} style={styles.quizView}>
+<View style={styles.quizText}>
+<View style={{ marginVertical: 10 }}>
+<Text style={{ textAlign: "center", fontSize: 17, fontWeight: "bold", color: "#0a0908" }}>
+    {index + 1}: {question.questionText}
+</Text>
+</View>
+<View style={styles.ansOfQuiz}>
+<RadioButton.Group
+    onValueChange={newValue => handleOptionChange(index, newValue)}
+    value={selectedOptions[index]}
+>
+    {question.options.map((option, optionIndex) => (
+        <View key={optionIndex} style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <RadioButton.Android
+                value={option.value}
+                onPress={() => handleOptionChange(index, option.value)}
+                color={selectedOptions[index] === option.value ? "#006400" : "#4d194d"}
+
+                // color="#006400" 
+            />
+            <Text>{option.label}</Text>
+        </View>
+    ))}
+</RadioButton.Group>
+</View>
+</View>
+</View> */}
+
+
+
+
+
+{/* {question.options.map((option, optionIndex) => (
+<View key={optionIndex} style={{ alignItems: 'center', flex: 0.1 }}>
+    <Button
+        title={option.label}
+        onPress={() => handleOptionChange(index, option.value)}
+        color={selectedOptions[index] === option.value ? "#006400" : "#4d194d"}
+    />
+</View>
+))} */}
 
 
 

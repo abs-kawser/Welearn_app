@@ -10,8 +10,11 @@ const Quiz = () => {
   return (
 
   <View style={styles.mainContainer}>
+
     <CustomHeader title="Quiz" />
+
     <ScrollView>
+
       <View style={styles.courseListMainContainer}>
         <View style={styles.child1}>
           <Image
@@ -60,7 +63,6 @@ const Quiz = () => {
       </View>
 
       <View style={styles.courseListMainContainer}>
-
         <View style={styles.child1}>
           <Image
             source={require("../../asset/VTAPA.png")}
@@ -105,9 +107,10 @@ const Quiz = () => {
           </TouchableOpacity>
         </View>
       </View>
+      
     </ScrollView>
-  </View>
 
+  </View>
   );
 
 };
