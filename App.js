@@ -60,6 +60,7 @@ const App = () => {
   return (
 
     <>
+    
        <PaperProvider>
        <AppNav/>
        </PaperProvider>
@@ -74,3 +75,5 @@ export default App
 const styles = StyleSheet.create({
 
 })
+
+

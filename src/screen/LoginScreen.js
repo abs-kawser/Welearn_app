@@ -9,8 +9,11 @@ const LoginScreen = () => {
 
     return (
 
-<ScrollView style={styles.MainContainter}>
+    <ScrollView style={styles.MainContainter}>
+        
     <View style={{ marginVertical: 100 }}>
+        
+
         <View style={styles.TextPart}>
             <Text style={{ fontWeight: "bold", fontFamily: 'Roboto-bold', fontSize: 25, color: "black", }}> Welcome to {''}
                 <Text>
@@ -61,8 +64,11 @@ const LoginScreen = () => {
             <Text style={{ fontSize: 16 }}>By signing in with an account, you agree to </Text>
             <Text style={{ marginLeft: 10, marginTop: 10 }}>WeLearn’s Terms of Service and Privacy Policy.</Text>
         </View>
+
     </View>
-</ScrollView>
+    
+    </ScrollView>
+
     );
 }
 

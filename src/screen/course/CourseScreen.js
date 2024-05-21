@@ -16,8 +16,8 @@ const CourseScreen = () => {
 
     <View style={styles.mainContainer}>
 
-      {/* Custom header start */}
-      {/* <View style={styles.customHeader}>
+        {/* Custom header start */}
+        {/* <View style={styles.customHeader}>
     <View>
       <TouchableOpacity
         style={{
@@ -62,6 +62,7 @@ const CourseScreen = () => {
       </View>
       {/* buttons part end*/}
       {/*All course list*/}
+
       <ScrollView >
 
         <View style={styles.courseListMainContainer}>
@@ -251,11 +252,12 @@ const CourseScreen = () => {
             </TouchableOpacity>
           </View>
         </View>
+
       </ScrollView>
     </View>
 
+    
   );
-
 }
 
 export default CourseScreen;
