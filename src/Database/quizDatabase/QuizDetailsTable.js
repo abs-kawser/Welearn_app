@@ -25,7 +25,7 @@ export const initQuizDatabase = () => {
 
 const upDtateMethod =()=>{
 
-}
+};
 
 
 

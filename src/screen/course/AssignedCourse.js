@@ -14,6 +14,7 @@ const AssignedCourse = () => {
         <CustomHeader />
       </>
       {/* buttons part start  */}
+
       <View style={styles.buttonMainContainer}>
         <TouchableOpacity style={styles.buttonGroup} onPress={() => navigation.navigate('Course')}>
           <Text style={styles.textProperty}>All</Text>
@@ -29,8 +30,8 @@ const AssignedCourse = () => {
           <Text style={[styles.textProperty, { marginHorizontal: 10 }]}>Completed</Text>
         </TouchableOpacity>
       </View>
-      {/* buttons part end*/}
 
+      {/* buttons part end*/}
 
       <ScrollView>
         <View style={styles.courseListMainContainer}>
@@ -126,13 +127,13 @@ const AssignedCourse = () => {
         </View>
       </ScrollView>
     </View>
-  );
+  ); 
+  
 }
 
 export default AssignedCourse;
 
-
-const styles = StyleSheet.create({
+ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     backgroundColor: "#EBFBFD"

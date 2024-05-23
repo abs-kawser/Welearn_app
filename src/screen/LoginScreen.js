@@ -66,7 +66,6 @@ const LoginScreen = () => {
         </View>
 
     </View>
-    
     </ScrollView>
 
     );

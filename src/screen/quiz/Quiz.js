@@ -5,108 +5,106 @@ import CustomHeader from '../../component/CustomHeader';
 
 const Quiz = () => {
 
-
   const navigation = useNavigation();
 
   return (
 
-  <View style={styles.mainContainer}>
+    <View style={styles.mainContainer}>
 
-    <CustomHeader title="Quiz" /> 
+      <CustomHeader title="Quiz" />
 
-    <ScrollView>
+      <ScrollView>
+        <View style={styles.courseListMainContainer}>
 
-      <View style={styles.courseListMainContainer}>
-
-        <View style={styles.child1}>
-          <Image
-            source={require("../../asset/Enterogermina_1.png")}
-            style={{ width: 110, height: 95, marginVertical: 17, marginHorizontal: 5, }}
-          />
-        </View>
-
-        <View style={styles.child2}>
-          <View style={{}}>
-            <Text style={{ color: "black", fontWeight: "bold", fontSize: 15, marginLeft: 10 }}>Monfast</Text>
+          <View style={styles.child1}>
+            <Image
+              source={require("../../asset/Enterogermina_1.png")}
+              style={{ width: 110, height: 95, marginVertical: 17, marginHorizontal: 5, }}
+            />
           </View>
 
-          {/* min/less/quiz */}
-          <View style={{ flexDirection: "row", gap: 10 }}>
-            <View style={{ flexDirection: "row", }}>
-              <Image source={require("../../asset/clock.png")} style={{ height: 15, width: 15, alignSelf: "center" }} />
-              <Text style={{ marginLeft: 5, color: "black", fontSize: 11 }}>6h 14min</Text>
+          <View style={styles.child2}>
+            <View style={{}}>
+              <Text style={{ color: "black", fontWeight: "bold", fontSize: 15, marginLeft: 10 }}>Monfast</Text>
             </View>
 
-            <View style={{ flexDirection: "row", }}>
-              <Image source={require("../../asset/quiz.png")} style={{ height: 15, width: 15, alignSelf: "center" }} />
-              <Text style={{ marginLeft: 5, color: "black", fontSize: 11 }}>24 Lessons</Text>
+            {/* min/less/quiz */}
+            <View style={{ flexDirection: "row", gap: 10 }}>
+              <View style={{ flexDirection: "row", }}>
+                <Image source={require("../../asset/clock.png")} style={{ height: 15, width: 15, alignSelf: "center" }} />
+                <Text style={{ marginLeft: 5, color: "black", fontSize: 11 }}>6h 14min</Text>
+              </View>
+
+              <View style={{ flexDirection: "row", }}>
+                <Image source={require("../../asset/quiz.png")} style={{ height: 15, width: 15, alignSelf: "center" }} />
+                <Text style={{ marginLeft: 5, color: "black", fontSize: 11 }}>24 Lessons</Text>
+              </View>
+
+              <View style={{ flexDirection: "row" }}>
+                <Image source={require("../../asset/lightbulb.png")} style={{ height: 15, width: 15, alignSelf: "center" }} />
+                <Text style={{ marginLeft: 5, color: "black", fontSize: 11 }}>2 Quiz</Text>
+              </View>
             </View>
+          </View>
 
-            <View style={{ flexDirection: "row" }}>
-              <Image source={require("../../asset/lightbulb.png")} style={{ height: 15, width: 15, alignSelf: "center" }} />
-              <Text style={{ marginLeft: 5, color: "black", fontSize: 11 }}>2 Quiz</Text>
+          <View style={styles.child3}>
+            <TouchableOpacity style=
+              {{
+                height: 40, backgroundColor: "#00A9B8", width: "55%", borderRadius: 5, justifyContent: 'center',
+                marginLeft: 19
+
+              }}>
+              <Text
+                onPress={() => navigation.navigate('QuizDetailsScreen')}
+                style={{ color: "#FFFFFF", fontWeight: "bold", textAlign: "center", fontFamily: 'Roboto-bold', }}>Start</Text>
+            </TouchableOpacity>
+          </View>
+
+        </View>
+
+        <View style={styles.courseListMainContainer}>
+          <View style={styles.child1}>
+            <Image
+              source={require("../../asset/VTAPA.png")}
+              style={{ width: 110, height: 95, marginVertical: 17, marginHorizontal: 5, }}
+            />
+          </View>
+          <View style={styles.child2}>
+            <View style={{}}>
+              <Text style={{ color: "black", fontWeight: "bold", fontSize: 15, marginLeft: 10 }}>Monfast</Text>
+            </View>
+            {/* min/less/quiz */}
+            <View style={{ flexDirection: "row", gap: 10 }}>
+              <View style={{ flexDirection: "row", }}>
+                <Image source={require("../../asset/clock.png")} style={{ height: 15, width: 15, alignSelf: "center" }} />
+                <Text style={{ marginLeft: 5, color: "black", fontSize: 11 }}>6h 14min</Text>
+              </View>
+
+              <View style={{ flexDirection: "row", }}>
+                <Image source={require("../../asset/quiz.png")} style={{ height: 15, width: 15, alignSelf: "center" }} />
+                <Text style={{ marginLeft: 5, color: "black", fontSize: 11 }}>24 Lessons</Text>
+              </View>
+
+              <View style={{ flexDirection: "row" }}>
+                <Image source={require("../../asset/lightbulb.png")} style={{ height: 15, width: 15, alignSelf: "center" }} />
+                <Text style={{ marginLeft: 5, color: "black", fontSize: 11 }}>2 Quiz</Text>
+              </View>
             </View>
           </View>
-        </View>
 
-        <View style={styles.child3}>
-          <TouchableOpacity style=
-            {{
-              height: 40, backgroundColor: "#00A9B8", width: "55%", borderRadius: 5, justifyContent: 'center',
-              marginLeft: 19
+          <View style={styles.child3}>
+            <TouchableOpacity style=
+              {{
+                height: 40, backgroundColor: "#00A9B8", width: "55%", borderRadius: 5, justifyContent: 'center',
+                marginLeft: 19
 
-            }}>
-            <Text
-              onPress={() => navigation.navigate('QuizDetailsScreen')}
-              style={{ color: "#FFFFFF", fontWeight: "bold", textAlign: "center", fontFamily: 'Roboto-bold', }}>Start</Text>
-          </TouchableOpacity>
-        </View>
-
-      </View>
-
-    <View style={styles.courseListMainContainer}>
-      <View style={styles.child1}>
-        <Image
-          source={require("../../asset/VTAPA.png")}
-          style={{ width: 110, height: 95, marginVertical: 17, marginHorizontal: 5, }}
-        />
-      </View>
-      <View style={styles.child2}>
-        <View style={{}}>
-          <Text style={{ color: "black", fontWeight: "bold", fontSize: 15, marginLeft: 10 }}>Monfast</Text>
-        </View>
-        {/* min/less/quiz */}
-        <View style={{ flexDirection: "row", gap: 10 }}>
-          <View style={{ flexDirection: "row", }}>
-            <Image source={require("../../asset/clock.png")} style={{ height: 15, width: 15, alignSelf: "center" }} />
-            <Text style={{ marginLeft: 5, color: "black", fontSize: 11 }}>6h 14min</Text>
-          </View>
-
-          <View style={{ flexDirection: "row", }}>
-            <Image source={require("../../asset/quiz.png")} style={{ height: 15, width: 15, alignSelf: "center" }} />
-            <Text style={{ marginLeft: 5, color: "black", fontSize: 11 }}>24 Lessons</Text>
-          </View>
-
-          <View style={{ flexDirection: "row" }}>
-            <Image source={require("../../asset/lightbulb.png")} style={{ height: 15, width: 15, alignSelf: "center" }} />
-            <Text style={{ marginLeft: 5, color: "black", fontSize: 11 }}>2 Quiz</Text>
+              }}>
+              <Text style={{ color: "#FFFFFF", fontWeight: "bold", textAlign: "center", fontFamily: 'Roboto-bold', }}>Start</Text>
+            </TouchableOpacity>
           </View>
         </View>
-      </View>
-
-      <View style={styles.child3}>
-        <TouchableOpacity style=
-          {{
-            height: 40, backgroundColor: "#00A9B8", width: "55%", borderRadius: 5, justifyContent: 'center',
-            marginLeft: 19
-
-          }}>
-          <Text style={{ color: "#FFFFFF", fontWeight: "bold", textAlign: "center", fontFamily: 'Roboto-bold', }}>Start</Text>
-        </TouchableOpacity>
-      </View>
+      </ScrollView>
     </View>
-  </ScrollView>
-  </View>
 
   );
 
@@ -136,7 +134,7 @@ const styles = StyleSheet.create({
   centeredTextContainer: {
     flex: 0.8, // Make this view take up all remaining space
     justifyContent: 'center', // Center content horizontally
-    alignItems: 'center', 
+    alignItems: 'center',
     // Center content vertically within this view
   },
   // 

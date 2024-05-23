@@ -54,20 +54,22 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import AppNav from './src/Navigation/StackNavigation/AppNav'
 import { PaperProvider } from 'react-native-paper';
+import AuthProvider from './src/Context/AuthContext';
 
 const App = () => {
 
   return (
 
     <>
-    
+       <AuthProvider>   
        <PaperProvider>
-       <AppNav/>
+        <AppNav/>
        </PaperProvider>
-      
+       </AuthProvider> 
     </>
 
   );
+  
 }
 
 export default App
