@@ -14,7 +14,6 @@ const AssignedCourse = () => {
         <CustomHeader />
       </>
       {/* buttons part start  */}
-
       <View style={styles.buttonMainContainer}>
         <TouchableOpacity style={styles.buttonGroup} onPress={() => navigation.navigate('Course')}>
           <Text style={styles.textProperty}>All</Text>
@@ -30,9 +29,7 @@ const AssignedCourse = () => {
           <Text style={[styles.textProperty, { marginHorizontal: 10 }]}>Completed</Text>
         </TouchableOpacity>
       </View>
-
       {/* buttons part end*/}
-
       <ScrollView>
         <View style={styles.courseListMainContainer}>
           <View style={styles.child1}>
@@ -127,8 +124,8 @@ const AssignedCourse = () => {
         </View>
       </ScrollView>
     </View>
-  ); 
-  
+
+ );
 }
 
 export default AssignedCourse;
@@ -144,11 +141,14 @@ export default AssignedCourse;
     borderRadius: 15,
   },
   centeredTextContainer: {
-    flex: 0.8, // Make this view take up all remaining space
-    justifyContent: 'center', // Center content horizontally
-    alignItems: 'center', // Center content vertically within this view
+    flex: 0.8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // Center content vertically within this view
+    // Center content horizontally
+    // Make this view take up all remaining space
   },
-  // 
+
   buttonMainContainer: {
     // backgroundColor: "red",
     marginTop: 5,
@@ -189,16 +189,16 @@ export default AssignedCourse;
     marginTop: 10
   },
   child1: {
-    // flex: 0.3,
     width: "30%",
+    // flex: 0.3,
     // backgroundColor:"black"
   },
   child2: {
-    // flex: 0.4,
     width: "40%",
     flexDirection: "column",
     justifyContent: "space-around",
 
+    // flex: 0.4,
     // marginLeft:10,
     // borderWidth:1,
     // backgroundColor: "#ffb703"
@@ -211,4 +211,5 @@ export default AssignedCourse;
     // backgroundColor:"black",
     // flex: 0.3,
   },
-})
+
+});

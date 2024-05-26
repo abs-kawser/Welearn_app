@@ -3,6 +3,7 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
+
   const navigation = useNavigation();
 
   return (
@@ -105,10 +106,9 @@ const HomeScreen = () => {
   );
 }
 
-export default HomeScreen;
+ export default HomeScreen;
 
-
-const styles = StyleSheet.create({
+ const styles = StyleSheet.create({
   //  learn today start
   learnTodayContainer: {
     height: 115,
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
 
 
 
-})  
+ })  
 
 
 

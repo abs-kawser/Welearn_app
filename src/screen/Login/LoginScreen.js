@@ -21,13 +21,14 @@ import { Base_Url } from '../../../variable';
 const LoginScreen = () => {
 
   const [showPassword, setShowPassword] = useState(false);
-
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
   const [username, setUserName] = useState('');
   const [userPassword, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [isLoader, setIsLoader] = useState(false); // State for managing loading indicator
+  const [isLoader, setIsLoader] = useState(false);
+
+  // State for managing loading indicator
 
   // const handleLogin = async () => {
   //   if (!username || !userPassword) {
@@ -129,10 +130,8 @@ const LoginScreen = () => {
 
   return (
 
-    
+
     <ScrollView style={styles.MainContainter} keyboardShouldPersistTaps="always">
-      
-      
       <StatusBar
         backgroundColor="#cefbff" // f8f9fa  Set the background color of the status bar
         barStyle="dark-content" // Set the style of the status bar text (light or dark)
@@ -161,8 +160,7 @@ const LoginScreen = () => {
         </View>
 
         {/* forms input view */}
-
-        <View style={{ marginTop: 40, padding: 20 }}>
+         <View style={{ marginTop: 40, padding: 20 }}>
           {/* user name */}
           <Text style={styles.label}>User Name</Text>
           <Animatable.View
@@ -180,7 +178,6 @@ const LoginScreen = () => {
               placeholderTextColor="#adb5bd"
             />
           </Animatable.View>
-
           {/* password */}
           <Text style={styles.label}>Password</Text>
           <Animatable.View
@@ -222,7 +219,7 @@ const LoginScreen = () => {
                 Forgot Password?
               </Text>
             </View> */}
-          {error && <Text style={styles.warning}>{error}</Text>}
+          {error && <Text style={styles.warning}>{error}</Text>} 
           {/* button */}
           <Animatable.View animation="fadeInUp" duration={1000}>
             <TouchableOpacity
@@ -269,15 +266,18 @@ const LoginScreen = () => {
           </Text>
         </Animatable.View>
       </View>
-
-
+      
     </ScrollView>
+
   );
+
 };
 
 export default LoginScreen;
 
+
 const styles = StyleSheet.create({
+
   MainContainter: {
     flex: 1,
     backgroundColor: '#cefbff',
@@ -294,7 +294,6 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
   },
-
   We: {
     fontSize: 25,
     color: '#001EBC',
@@ -313,7 +312,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   bottomView: {
     flex: 1.5,
     backgroundColor: 'white',
@@ -321,7 +319,6 @@ const styles = StyleSheet.create({
     borderTopStartRadius: 40,
     borderTopEndRadius: 40,
   },
-
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -330,10 +327,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 10,
     width: '100%',
-    maxWidth: 400, // Limit the input container width for responsiveness
+    maxWidth: 400,
+    // Limit the input container width for responsiveness
     // borderWidth: 1,
     // borderColor: '#0B87AC',
-
     // elevation: 2,
   },
   inputIcon: {
@@ -358,40 +355,38 @@ const styles = StyleSheet.create({
     backgroundColor: '#00A9B8',
     borderRadius: 10,
     paddingVertical: 10,
-    // paddingHorizontal: 15, #2358E1 219ebc color: '#777777'
     width: '100%',
-    maxWidth: 400, // Limit the button width for responsiveness
+    maxWidth: 400,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 30,
-
+    // paddingHorizontal: 15, #2358E1 219ebc color: '#777777'
+    // Limit the button width for responsiveness;
     // elevation: 2,
   },
   loginButtonText: {
     color: '#fff',
     fontSize: 18,
-    // fontWeight: "500",
     textAlign: 'center',
+    // fontWeight: "500",
   },
   warning: {
     color: 'red',
     marginTop: 10,
   },
-
-  // ------
-
   TermCondition: {
-    // alignSelf: 'center',
-    //  backgroundColor:"red"
     padding: 20,
+     // alignSelf: 'center',
+    //  backgroundColor:"red"
   },
   iconContainer: {
     position: 'absolute',
-    // top: 25,
     right: 20,
+   // top: 25,
   },
+
 });
 
 

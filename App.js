@@ -61,15 +61,15 @@ const App = () => {
   return (
 
     <>
-       <AuthProvider>   
-       <PaperProvider>
-        <AppNav/>
-       </PaperProvider>
-       </AuthProvider> 
+      <AuthProvider>
+        <PaperProvider>
+          <AppNav />
+        </PaperProvider>
+      </AuthProvider>
     </>
 
   );
-  
+
 }
 
 export default App

@@ -6,8 +6,6 @@ import { useNavigation } from '@react-navigation/native';
 import CustomHeader from './../../component/CustomHeader';
 
 
-
-
 const CourseScreen = () => {
 
   const navigation = useNavigation();
@@ -16,29 +14,6 @@ const CourseScreen = () => {
 
     <View style={styles.mainContainer}>
 
-        {/* Custom header start */}
-        {/* <View style={styles.customHeader}>
-    <View>
-      <TouchableOpacity
-        style={{
-          paddingVertical: 25,
-          paddingHorizontal: 20,
-        }}>
-        <Icon name="bars" size={18} style={{ color: "white" }} />
-      </TouchableOpacity>
-    </View>
-
-
-    <View style={styles.centeredTextContainer}>
-      <Text style={{
-        color: 'white',
-        fontWeight: "bold",
-        fontFamily: ' ',
-        fontSize: 18,
-      }}>My Courses</Text>
-
-    </View>
-  </View> */}
 
       <>
         <CustomHeader title="Courses" />
@@ -252,12 +227,10 @@ const CourseScreen = () => {
             </TouchableOpacity>
           </View>
         </View>
-
       </ScrollView>
     </View>
-
-    
   );
+
 }
 
 export default CourseScreen;

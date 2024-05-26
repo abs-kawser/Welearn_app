@@ -96,6 +96,6 @@ const StackNavigator = () => {
 export default StackNavigator;
 
 const styles = StyleSheet.create({
-
+    
 
 })
