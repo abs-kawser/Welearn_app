@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 
-const CustomHeader = ({title}) => {
+const CustomHeader = ({ title }) => {
   const navigation = useNavigation();
 
   return (
@@ -15,10 +15,9 @@ const CustomHeader = ({title}) => {
             paddingVertical: 25,
             paddingHorizontal: 20,
           }} onPress={() => navigation.goBack()}>
-          <Icon name="arrow-left" size={18} style={{ color: "white" }}  />
+          <Icon name="arrow-left" size={18} style={{ color: "white" }} />
         </TouchableOpacity>
       </View>
-
 
       <View style={styles.centeredTextContainer}>
         <Text style={{
@@ -31,13 +30,12 @@ const CustomHeader = ({title}) => {
     </View>
 
   );
-  
-}
+
+};
 
 export default CustomHeader
 
 const styles = StyleSheet.create({
-
   customHeader: {
     flexDirection: "row",
     backgroundColor: "#00A9B8",
@@ -48,6 +46,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center', // Center content horizontally
     alignItems: 'center', // Center content vertically within this view
   },
-  
-
 })

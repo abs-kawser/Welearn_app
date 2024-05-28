@@ -24,70 +24,69 @@ const StackNavigator = () => {
 
     return (
 
+        <Stack.Navigator>
 
-    <Stack.Navigator>
+            <Stack.Screen 
+            name="HomeScreen" 
+            component={DrawerNavigator} 
+            options={{ headerShown: false }} 
+            />
 
-        <Stack.Screen 
-        name="HomeScreen" 
-        component={DrawerNavigator} 
-        options={{ headerShown: false }} 
-        />
+            <Stack.Screen
+                name="Course"
+                component={CourseScreen}
+                options={{ headerShown: false }}
+            />
 
-        <Stack.Screen
-            name="Course"
-            component={CourseScreen}
-            options={{ headerShown: false }}
-        />
+            <Stack.Screen
+                name="Quiz"
+                component={Quiz}
+                options={{ headerShown: false }}
+            />
 
-        <Stack.Screen
-            name="Quiz"
-            component={Quiz}
-            options={{ headerShown: false }}
-        />
+            <Stack.Screen
+                name="Profile"
+                component={Profile}
+                options={{ headerShown: false }}
+            />
 
-        <Stack.Screen
-            name="Profile"
-            component={Profile}
-            options={{ headerShown: false }}
-        />
+            <Stack.Screen
+                name="Settings"
+                component={Settings}
+                options={{ headerShown: false }}
+            />
 
-        <Stack.Screen
-            name="Settings"
-            component={Settings}
-            options={{ headerShown: false }}
-        />
+            <Stack.Screen
+                name="Product"
+                component={ProductScreen}
+                options={{ headerShown: true }}
+            />
 
-        <Stack.Screen
-            name="Product"
-            component={ProductScreen}
-            options={{ headerShown: true }}
-        />
+            <Stack.Screen
+                name="Login"
+                component={LoginScreen}
+                options={{ headerShown: false }}
+            />
 
-        <Stack.Screen
-            name="Login"
-            component={LoginScreen}
-            options={{ headerShown: false }}
-        />
+            <Stack.Screen
+                name="Assigned"
+                component={AssignedCourse}
+                options={{ headerShown: false }}
+            />
 
-        <Stack.Screen
-            name="Assigned"
-            component={AssignedCourse}
-            options={{ headerShown: false }}
-        />
+            <Stack.Screen
+                name="Password"
+                component={ChangePass}
+                options={{ headerShown: false }}
+            />
 
-        <Stack.Screen
-            name="Password"
-            component={ChangePass}
-            options={{ headerShown: false }}
-        />
+            <Stack.Screen
+                name='QuizDetailsScreen'
+                component={QuizDetails}
+                options={{ headerShown: false }}
+            />
 
-        <Stack.Screen
-            name='QuizDetailsScreen'
-            component={QuizDetails}
-            options={{ headerShown: false }}
-        />
-
-    </Stack.Navigator>
+        </Stack.Navigator>
        
     );
     
@@ -95,7 +94,7 @@ const StackNavigator = () => {
 
 export default StackNavigator;
 
+
 const styles = StyleSheet.create({
     
-
 })
