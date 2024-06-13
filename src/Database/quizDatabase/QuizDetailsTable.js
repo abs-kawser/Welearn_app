@@ -1,5 +1,7 @@
 import { db } from "../MainDatabase";
 
+
+
 export const initQuizDatabase = () => {
 
     db.transaction(txn => {
@@ -21,11 +23,14 @@ export const initQuizDatabase = () => {
         )
 
     }) 
-}
+};
+
+
 
 const upDtateMethod =()=>{
-
+    
 };
+
 
 
 

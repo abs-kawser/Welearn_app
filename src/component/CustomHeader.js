@@ -28,12 +28,12 @@ const CustomHeader = ({ title }) => {
         }}>{title}</Text>
       </View>
     </View>
-
+    
   );
-
+  
 };
 
-export default CustomHeader
+export default CustomHeader 
 
 const styles = StyleSheet.create({
   customHeader: {
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center', // Center content horizontally
     alignItems: 'center', // Center content vertically within this view
   },
-})
+});

@@ -1,8 +1,9 @@
-import React, {createContext, useState} from 'react';
+import React, { createContext, useState } from 'react';
 
 export const AuthContext = createContext();
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
+
   const [isLoading, setIsLoading] = useState(true);
 
   const [isLoggedIn, setIsLoggedIn] = useState({
@@ -10,12 +11,20 @@ const AuthProvider = ({children}) => {
     userDetails: null,
   });
 
+
+
   return (
-    <AuthContext.Provider value={{isLoggedIn, setIsLoggedIn, isLoading,setIsLoading}}>
+
+
+    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, isLoading, setIsLoading }}>
       {children}
     </AuthContext.Provider>
+     
+
   );
+
 };
 
-export default AuthProvider; 
- 
+export default AuthProvider;
+
+

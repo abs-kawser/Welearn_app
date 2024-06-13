@@ -63,46 +63,44 @@ const AppNav = () => {
   //     setIsLoading(false); // Prevent unnecessary loading on subsequent launches
   //   }
   // }, []);
-    
-  
-    useEffect(() => {
-        const getUserData = async () => {
-          try {         
-            setIsLoading(true);
-            const userData = await AsyncStorage.getItem('userData');
-            
-            setIsLoggedIn(prevUserDetails => ({
-              ...prevUserDetails,
-              login: true,
-              userDetails: JSON.parse(userData),
-            }));
-
-            // if (userData !== null) {
-            //   setIsLoggedIn({
-            //     login: true,
-            //     userDetails: JSON.parse(userData),
-            //   });
-            // }
-
-          } catch (error) {
-            console.log(error);
-          } finally {
-            setIsLoading(false);
-            setInitializing(false);
-          }
-        };
-        getUserData();
-      }, []);
 
 
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        setIsLoading(true);
+        const userData = await AsyncStorage.getItem('userData');
 
+        setIsLoggedIn(prevUserDetails => ({
+          ...prevUserDetails,
+          login: true,
+          userDetails: JSON.parse(userData),
+        }));
+
+        // if (userData !== null) {
+        //   setIsLoggedIn({
+        //     login: true,
+        //     userDetails: JSON.parse(userData),
+        //   });
+        // }
+
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsLoading(false);
+        setInitializing(false);
+      }
+    };
+    getUserData();
+  }, []);
   // Return null while initializing
+
 
   if (initializing) {
     return null;
   };
 
-  
+
 
   return (
 
@@ -121,15 +119,15 @@ const AppNav = () => {
     //     <LoginScreen />
     //   )}
     // </NavigationContainer>
-  
+
   );
- 
+
 };
 
 export default AppNav;
 
 const styles = StyleSheet.create({
-    
+
 });
 
 

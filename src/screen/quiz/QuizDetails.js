@@ -218,74 +218,74 @@ const QuizDetails = () => {
 
     return (
 
-    <View style={{ flex: 1, backgroundColor: "#E1F4FF", }}>
-        <CustomHeader title={"Your Quiz"} />
-        {/* <View style={{ backgroundColor: "#E1F4FF" }}> */}
-        {/* </View> */}
-        <View style={styles.progressBarContainer}>
-            <View style={styles.progressBar}>
-                <View style={{ backgroundColor: '#ccc', height: 15, borderRadius: 5, width: '100%' }}>
-                    <View style={{ backgroundColor: '#4aa77c', height: 15, borderRadius: 5, width: `${progress * 100}%` }}/>
-                </View>
-            </View>
-        </View>
-
-        <View style={styles.pageNumberContainer}>
-            <View style={styles.pageNumber}>
-                <Text style={styles.pageNumberText}>{currentPage}/{totalPages}</Text>
-            </View>
-        </View>
-
-        <ScrollView style={{ flex: 1, backgroundColor: "#E1F4FF" }}>
-            {questions.slice(currentQuestionIndex, currentQuestionIndex + questionsPerSet).map((question, index) =>
-                renderQuestion(question, currentQuestionIndex + index, index)
-            )}
-        </ScrollView>
-
-        <View style={{ flex: 0.1, justifyContent: 'center', backgroundColor: "#edffff" }}>
-            <View style={styles.navigationButtons}>
-                {currentQuestionIndex > 0 && (
-                    // <Button title=" Back" onPress={handleBack}  style={styles.buttonText} />
-                    <TouchableOpacity
-                        style={styles.btnStyle}
-                        onPress={handleBack}
-                    >
-                        <Text
-                            style={styles.textStyle}
-                        >
-                            Back
-                        </Text>
-                    </TouchableOpacity>
-                )}
-
-                {currentQuestionIndex < questions.length - questionsPerSet && (
-                    // <Button title=" Next" onPress={handleNext} />
-                    <TouchableOpacity
-                        style={styles.btnStyle}
-                        onPress={handleNext} >
-                        <Text
-                            style={styles.textStyle}
-                        >
-                            Next
-                        </Text>
-                    </TouchableOpacity>
-                )}
-
-                {isLastPage && (
-                    // <Button title="Save" />
-                    <TouchableOpacity
-                        style={styles.saveBtnStyle}
-                    >
-                        <Text
-                            style={styles.textStyle}
-                        >
-                            Save
-                        </Text>
-                    </TouchableOpacity>
-                )}
+<View style={{ flex: 1, backgroundColor: "#E1F4FF", }}>
+    <CustomHeader title={"Your Quiz"} />
+    {/* <View style={{ backgroundColor: "#E1F4FF" }}> */}
+    {/* </View> */}
+    <View style={styles.progressBarContainer}>
+        <View style={styles.progressBar}>
+            <View style={{ backgroundColor: '#ccc', height: 15, borderRadius: 5, width: '100%' }}>
+                <View style={{ backgroundColor: '#4aa77c', height: 15, borderRadius: 5, width: `${progress * 100}%`}}/>
             </View>
         </View>
     </View>
+
+    <View style={styles.pageNumberContainer}>
+        <View style={styles.pageNumber}>
+            <Text style={styles.pageNumberText}>{currentPage}/{totalPages}</Text>
+        </View>
+    </View>
+
+    <ScrollView style={{ flex: 1, backgroundColor: "#E1F4FF" }}>
+        {questions.slice(currentQuestionIndex, currentQuestionIndex + questionsPerSet).map((question, index) =>
+            renderQuestion(question, currentQuestionIndex + index, index)
+        )}
+    </ScrollView>
+
+    <View style={{ flex: 0.1, justifyContent: 'center', backgroundColor: "#edffff" }}>
+        <View style={styles.navigationButtons}>
+            {currentQuestionIndex > 0 && (
+                // <Button title=" Back" onPress={handleBack}  style={styles.buttonText} />
+                <TouchableOpacity
+                    style={styles.btnStyle}
+                    onPress={handleBack}
+                >
+                    <Text
+                        style={styles.textStyle}
+                    >
+                        Back
+                    </Text>
+                </TouchableOpacity>
+            )}
+
+            {currentQuestionIndex < questions.length - questionsPerSet && (
+                // <Button title=" Next" onPress={handleNext} />
+                <TouchableOpacity
+                    style={styles.btnStyle}
+                    onPress={handleNext} >
+                    <Text
+                        style={styles.textStyle}
+                    >
+                        Next
+                    </Text>
+                </TouchableOpacity>
+            )}
+
+            {isLastPage && (
+                // <Button title="Save" />
+                <TouchableOpacity
+                    style={styles.saveBtnStyle}
+                >
+                    <Text
+                        style={styles.textStyle}
+                    >
+                        Save
+                    </Text>
+                </TouchableOpacity>
+            )}
+        </View>
+    </View>
+</View>
 
     );
 

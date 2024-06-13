@@ -13,8 +13,6 @@ const CourseScreen = () => {
   return (
 
     <View style={styles.mainContainer}>
-
-
       <>
         <CustomHeader title="Courses" />
       </>
@@ -229,9 +227,10 @@ const CourseScreen = () => {
         </View>
       </ScrollView>
     </View>
+      
   );
 
-}
+};
 
 export default CourseScreen;
 
@@ -318,6 +317,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     // backgroundColor:"black",
   },
-
 
 });

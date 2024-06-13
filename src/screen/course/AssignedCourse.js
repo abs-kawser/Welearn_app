@@ -125,12 +125,13 @@ const AssignedCourse = () => {
       </ScrollView>
     </View>
 
- );
+  );
+
 }
 
 export default AssignedCourse;
 
- const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     backgroundColor: "#EBFBFD"
@@ -213,3 +214,6 @@ export default AssignedCourse;
   },
 
 });
+
+
+

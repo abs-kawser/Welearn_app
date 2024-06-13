@@ -23,13 +23,13 @@ const LoginScreen = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
+
   const [username, setUserName] = useState('');
   const [userPassword, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoader, setIsLoader] = useState(false);
 
   // State for managing loading indicator
-
   // const handleLogin = async () => {
   //   if (!username || !userPassword) {
   //     // setError('Please fill in both username and password fields');
@@ -79,6 +79,7 @@ const LoginScreen = () => {
   //     setError(errorMessage);
   //   }
   // };
+
 
   const handleLogin = async () => {
 
@@ -160,7 +161,7 @@ const LoginScreen = () => {
         </View>
 
         {/* forms input view */}
-         <View style={{ marginTop: 40, padding: 20 }}>
+        <View style={{ marginTop: 40, padding: 20 }}>
           {/* user name */}
           <Text style={styles.label}>User Name</Text>
           <Animatable.View
@@ -215,11 +216,11 @@ const LoginScreen = () => {
           </Animatable.View>
 
           {/* <View>
-              <Text style={{color: '#777B7A', textAlign: 'right'}}>
-                Forgot Password?
-              </Text>
-            </View> */}
-          {error && <Text style={styles.warning}>{error}</Text>} 
+            <Text style={{color: '#777B7A', textAlign: 'right'}}>
+              Forgot Password?
+            </Text>
+          </View> */}
+          {error && <Text style={styles.warning}>{error}</Text>}
           {/* button */}
           <Animatable.View animation="fadeInUp" duration={1000}>
             <TouchableOpacity
@@ -266,7 +267,6 @@ const LoginScreen = () => {
           </Text>
         </Animatable.View>
       </View>
-      
     </ScrollView>
 
   );
@@ -378,13 +378,13 @@ const styles = StyleSheet.create({
   },
   TermCondition: {
     padding: 20,
-     // alignSelf: 'center',
+    // alignSelf: 'center',
     //  backgroundColor:"red"
   },
   iconContainer: {
     position: 'absolute',
     right: 20,
-   // top: 25,
+    // top: 25,
   },
 
 });

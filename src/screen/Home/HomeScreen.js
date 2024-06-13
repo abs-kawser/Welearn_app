@@ -1,6 +1,8 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
+import CustomHeader from '../../component/CustomHeader';
+import HomeHeader from '../../component/HomeHeader';
 
 const HomeScreen = () => {
 
@@ -8,15 +10,20 @@ const HomeScreen = () => {
 
   return (
 
-    <View style={{ flex: 1, }}>
+    <>
+      <HomeHeader title="Home" />
+
+      {/* <View style={{ flex: 1, }}> */}
+      {/* <CustomHeader/> */}
       {/* learn today start*/}
-      <View style={{ flex: 0.1, backgroundColor: "#00A9B8" }}>
+
+      <View style={{ flex: 0.1, backgroundColor: "#00A9B8", }}>
         <View style={styles.learnTodayContainer}>
           <View style={styles.todayAndmyCourse}>
             <Text style={{ color: "black" }}>Learned today</Text>
 
-            <TouchableOpacity 
-            onPress={() => navigation.openDrawer()}>
+            <TouchableOpacity
+              onPress={() => navigation.openDrawer()}>
               <Text style={{ color: "blue" }}>My courses</Text>
             </TouchableOpacity>
           </View>
@@ -76,7 +83,7 @@ const HomeScreen = () => {
       {/* Continune part start*/}
       <View style={styles.continueMainContainer}>
         <View style={styles.continueText}>
-          <Text style={{color: "#000000",fontWeight:"bold",fontFamily: 'Roboto-bold',}} >Continue  Watching</Text>
+          <Text style={{ color: "#000000", fontWeight: "bold", fontFamily: 'Roboto-bold', }} >Continue  Watching</Text>
           <TouchableOpacity >
             <Text style={{ color: "#000000" }}>See All</Text>
           </TouchableOpacity>
@@ -90,7 +97,7 @@ const HomeScreen = () => {
 
       <View style={styles.continueMainContainer}>
         <View style={styles.continueText}>
-          <Text style={{ color: "#000000",fontWeight:"bold",fontFamily: 'Roboto-bold',}} >Assigned Courses</Text>
+          <Text style={{ color: "#000000", fontWeight: "bold", fontFamily: 'Roboto-bold', }} >Assigned Courses</Text>
           <TouchableOpacity>
             <Text style={{ color: "#000000" }}>See All</Text>
           </TouchableOpacity>
@@ -101,23 +108,29 @@ const HomeScreen = () => {
           <Image source={require("../../asset/Image_4.png")} />
         </View>
       </View>
-    </View>
+      {/* </View> */}
+    </>
+
 
   );
-}
 
- export default HomeScreen;
 
- const styles = StyleSheet.create({
+};
+
+export default HomeScreen;
+
+const styles = StyleSheet.create({
   //  learn today start
   learnTodayContainer: {
     height: 115,
     width: "85%",
     backgroundColor: "#FFFFFF",
-    marginTop: 18,
+    // marginTop: 18,
     alignSelf: "center",
     borderRadius: 10,
-    elevation: 20
+    elevation: 20,
+    // borderWidth:1,
+
   },
 
   todayAndmyCourse: {
@@ -185,7 +198,7 @@ const HomeScreen = () => {
     borderRadius: 10,
     width: "95%",
     alignSelf: "center",
-    
+
   },
 
   //  continue part start 
@@ -195,11 +208,11 @@ const HomeScreen = () => {
     padding: 8,
     justifyContent: "space-between",
     // backgroundColor: "red"
-     
+
   },
 
   ImageContainer: {
-    padding:8,
+    padding: 8,
     flexDirection: "row",
     justifyContent: "space-between",
     // backgroundColor: "green",
@@ -214,7 +227,7 @@ const HomeScreen = () => {
 
 
 
- })  
+})
 
 
 
